@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire">
+  <v-app>
 
     <v-app-bar class="app-bar" color="white" elevation="0" height="100px" hide-on-scroll app>
 
@@ -19,8 +19,10 @@
 
     </v-app-bar>
 
-    <v-main fluid>
-      <router-view></router-view>
+    <v-main class="content">
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
     </v-main>
 
     <!-- bottom nav here -->
@@ -79,6 +81,10 @@ button {
   margin: 20px;
   padding-bottom: 3px;
   cursor: pointer;
+}
+
+.content {
+  width: 100%;
 }
 
 /deep/ .v-toolbar__content {
