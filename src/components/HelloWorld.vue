@@ -37,15 +37,18 @@
   line-height: 1.2;
   color: #0052f7;
 }
+
 .header span::-moz-selection {
   background:rgba(0, 82, 274, 0.3);
   opacity: 1;
   color: #ffffff;
 }
+
 .header span::selection {
   background: rgba(0, 82, 274);
   color: #ffffff;
 }
+
 v-row {
   align-content: center !important;
 }

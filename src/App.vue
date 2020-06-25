@@ -138,8 +138,5 @@ button {
   box-shadow: -1px 1px 1px 0 rgba(0, 82, 247, 0.1);
 }
 
-v-app-bar {
-  position: relative;
-}
 </style>
 
