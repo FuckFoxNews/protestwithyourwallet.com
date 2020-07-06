@@ -1,37 +1,81 @@
 <template>
-  <v-app>
-
-    <v-app-bar class="app-bar" color="white" elevation="0" height="100px" hide-on-scroll app>
-
+  <v-app id="app">
+    <v-app-bar
+      class="app-bar"
+      color="background-1"
+      elevation="0"
+      height="100px"
+      hide-on-scroll app
+      dense>
       <v-toolbar-title>
-        <button @click="route('/')" :class="{ activeButton: onPWYW }" id="nav-title">Protest With Your Wallet</button>
+        <button
+          id="nav-title"
+          :class="{ activeButton: path === '/' }"
+          @click="route('/')">
+          Protest With Your Wallet
+        </button>
       </v-toolbar-title>
 
-      <v-spacer></v-spacer>
+      <v-spacer/>
 
-      <div id="right-nav" class="hidden-sm-and-down">
-        <button @click="route('/procedure')" class="tab-link" :class="{ activeButton : onTab1 }">Procedure</button>
-        <button @click="route('/toolkit')" class="tab-link" :class="{ activeButton : onTab2 }">Toolkit</button>
-        <button @click="route('/resources')" class="tab-link" :class="{ activeButton : onTab3 }">Resources</button>
-        <button @click="route('/about')" class="tab-link" :class="{ activeButton : onTab4 }">About</button>
-        <button @click="route('/stay-informed')" :class="{ activeButton : onStayInformed }" class="siButton">Stay Informed</button>
+      <div
+        id="right-nav"
+        class="hidden-sm-and-down">
+        <button
+          class="tab-link"
+          :class="{ activeButton : path === '/procedure' }"
+          @click="route('/procedure')">
+          Causes
+        </button>
+
+        <button
+          class="tab-link"
+          :class="{ activeButton : path === '/toolkit' }"
+          @click="route('/toolkit')">
+          Companies
+        </button>
+
+        <button
+          class="tab-link"
+          :class="{ activeButton : path === '/resources' }"
+          @click="route('/about')">
+          About
+        </button>
+
+        <button
+          class="tab-link"
+          :class="{ activeButton : path === '/about' }"
+          @click="route('/resources')">
+          Contact Us
+        </button>
+
+        <button
+          class="siButton"
+          :class="{ activeButton : path === '/stay-informed' }"
+          @click="route('/stay-informed')">
+          Stay Informed
+        </button>
       </div>
-
     </v-app-bar>
 
     <v-main class="content">
-      <v-container fluid="">
-        <router-view></router-view>
-      </v-container>
+      <router-view/>
     </v-main>
 
     <v-footer padless>
-
-      <v-card flat tile class="white text-center">
-
+      <v-card
+        flat
+        tile
+        class="white text-center">
         <v-card-text>
-          <v-btn v-for="icon in icons" :key="icon" class="mx-4" icon>
-            <v-icon size="24px"> {{ icon }} </v-icon>
+          <v-btn
+            v-for="icon in icons"
+            :key="icon"
+            class="mx-4"
+            icon>
+            <v-icon size="24px">
+              {{ icon }}
+            </v-icon>
           </v-btn>
         </v-card-text>
 
@@ -39,19 +83,17 @@
           Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo
           interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed
           massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi
-          vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui
+          vehicula lacinia malesuada. Nulla placerat augue vel I love you Uriyah ipsum ultrices, cursus iaculis dui
           sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque
           penatibus et magnis dis parturient montes, nascetur ridiculus mus.
         </v-card-text>
 
-        <v-divider></v-divider>
+        <v-divider/>
 
         <v-card-text>
           {{ new Date().getFullYear() }} - <strong> PWYW </strong>
         </v-card-text>
-
       </v-card>
-
     </v-footer>
   </v-app>
 </template>
@@ -60,10 +102,8 @@
 
 export default {
   name: "App",
-
   components: {
   },
-
   data: () => ({
     icons: [
       'mdi-facebook',
@@ -72,7 +112,6 @@ export default {
       'mdi-instagram',
     ],
   }),
-
   methods: {
     route(path) {
       if (this.$route.path != path) {
@@ -80,22 +119,24 @@ export default {
       }
     }
   },
-
   computed: {
+    path() {
+      return this.$route.path;
+    }
     onPWYW() {
-      return this.$route.path == "/";
+      return  == "/";
     },
     onTab1() {
-      return this.$route.path == "/tab1";
+      return this.$route.path == "/procedure";
     },
     onTab2() {
-      return this.$route.path == "/tab2";
+      return this.$route.path == "/toolkit";
     },
     onTab3() {
-      return this.$route.path == "/tab3";
+      return this.$route.path == "/resources";
     },
     onTab4() {
-      return this.$route.path == "/tab4";
+      return this.$route.path == "/about";
     },
     onStayInformed() {
       return this.$route.path == "/stay-informed";
@@ -104,17 +145,34 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap');
+
+:root {
+  --text: #212121;
+  --primary-1: #039BE5;
+  --primary-2: #29B5F6;
+  --primary-3: #4FC2F8;
+  --primary-4: #80D4F9;
+  --secondary-1: #E64A19;
+  --secondary-2: #F55020;
+  --secondary-3: #FE7143;
+  --secondary-4: #FC8A65;
+  --background-1: #FFFFFF;
+  --background-2: #F3F0EA;
+  --dark: #101820;
+}
+
+#app {
+  margin: 0;
+}
 
 button {
   font-size: 14px;
-  text-transform: none !important;
+  text-transform: none;
   color: #000000;
-  margin: 20px;
+  margin: 15px;
   padding-bottom: 3px;
-  cursor: pointer;
 }
 
 button:focus {
@@ -206,6 +264,10 @@ button::selection {
 .tab-link:hover {
   border-top: 4px solid #000000;
   padding: 20px 0;
+}
+
+.activeButton {
+  color: red !important;
 }
 
 </style>

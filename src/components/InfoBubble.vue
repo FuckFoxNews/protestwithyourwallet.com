@@ -2,7 +2,6 @@
   <div class="info-bubble">
     <v-container>
       <v-row>
-
         <v-col class="ma-0 pa-0">
           <button @click="route(items[0].route)">
             <v-card height="300" width="200" elevation="0" :ripple="false"  :class="{ activeButton : onBubble0 }">
@@ -23,7 +22,8 @@
           </button>
         </v-col>
 
-        <v-divider class="mx-4" inset vertical></v-divider> <!-- why I am not using v-for in v-col -->
+        <v-divider class="mx-4" inset vertical></v-divider>
+
 
         <v-col class="ma-0 pa-0">
           <button @click="route(items[2].route)">

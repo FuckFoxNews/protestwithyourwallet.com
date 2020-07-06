@@ -13,7 +13,7 @@
 
             <div class="home-art"> </div>
 
-            <InfoBubble :items = "InfoBubble_items"></InfoBubble>
+            <InfoBubble :items="InfoBubble_items"></InfoBubble>
         </v-sheet>
 
       </v-row>
@@ -91,6 +91,7 @@
 
 <script>
 import InfoBubble from '../components/InfoBubble.vue';
+
 export default {
   name: 'Home',
   components: {
