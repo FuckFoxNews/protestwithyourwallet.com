@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Procedure from '../views/Procedure.vue'
-import Toolkit from '../views/Toolkit.vue'
-import Resources from '../views/Resources.vue'
+import CauseList from '../views/CauseList.vue'
+import CompanyList from '../views/CompanyList.vue'
 import About from '../views/About.vue'
+import ContactUs from '../views/ContactUs.vue'
 import StayInformed from '../views/StayInformed.vue'
+
+
 
 Vue.use(VueRouter)
 
@@ -16,23 +18,24 @@ Vue.use(VueRouter)
     component: Home
   },
   {
-    path: '/procedure',
-    name: 'Procedure',
-    component: Procedure
+    path: '/cause-list',
+    name: 'CauseList',
+    component: CauseList
   },
   {
-    path: '/toolkit',
-    name: 'Toolkit',
-    component: Toolkit
+    path: '/company-list',
+    name: 'CompanyList',
+    component: CompanyList
   },
   {
-    path: '/resources',
-    name: 'Resources',
-    component: Resources
-  },{
     path: '/about',
     name: 'About',
     component: About
+  },
+  {
+    path: '/contact-us',
+    name: 'contact-us',
+    component: ContactUs
   },
   {
     path: '/stay-informed',
