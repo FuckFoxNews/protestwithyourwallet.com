@@ -23,21 +23,21 @@
         class="hidden-sm-and-down">
         <button
           class="tab-link"
-          :class="{ activeButton : path === '/procedure' }"
-          @click="route('/procedure')">
+          :class="{ activeButton : path === '/cause-list' }"
+          @click="route('/cause-list')">
           Causes
         </button>
 
         <button
           class="tab-link"
-          :class="{ activeButton : path === '/toolkit' }"
-          @click="route('/toolkit')">
+          :class="{ activeButton : path === '/company-list' }"
+          @click="route('/company-list')">
           Companies
         </button>
 
         <button
           class="tab-link"
-          :class="{ activeButton : path === '/resources' }"
+          :class="{ activeButton : path === '/about' }"
           @click="route('/about')">
           About
         </button>
@@ -122,24 +122,6 @@ export default {
   computed: {
     path() {
       return this.$route.path;
-    }
-    onPWYW() {
-      return  == "/";
-    },
-    onTab1() {
-      return this.$route.path == "/procedure";
-    },
-    onTab2() {
-      return this.$route.path == "/toolkit";
-    },
-    onTab3() {
-      return this.$route.path == "/resources";
-    },
-    onTab4() {
-      return this.$route.path == "/about";
-    },
-    onStayInformed() {
-      return this.$route.path == "/stay-informed";
     }
   }
 };
@@ -266,9 +248,6 @@ button::selection {
   padding: 20px 0;
 }
 
-.activeButton {
-  color: red !important;
-}
 
 </style>
 
