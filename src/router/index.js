@@ -7,8 +7,6 @@ import About from '../views/About.vue'
 import ContactUs from '../views/ContactUs.vue'
 import StayInformed from '../views/StayInformed.vue'
 
-
-
 Vue.use(VueRouter)
 
   const routes = [
