@@ -44,8 +44,8 @@
 
         <button
           class="tab-link"
-          :class="{ activeButton : path === '/about' }"
-          @click="route('/resources')">
+          :class="{ activeButton : path === '/contact' }"
+          @click="route('/contact')">
           Contact Us
         </button>
 

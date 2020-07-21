@@ -4,7 +4,7 @@ const router = express.Router();
 const axios = require('axios');
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = 'mongodb+srv://uriyahann:@cluster0.xvpyf.mongodb.net/pwyw-web-db?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://uriyahann:Evergreen@cluster0.xvpyf.mongodb.net/pwyw-web-db?retryWrites=true&w=majority';
 const client = new MongoClient(uri, {
   useNewUrlParser: true
 },{

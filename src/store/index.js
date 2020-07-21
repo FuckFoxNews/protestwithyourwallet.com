@@ -22,7 +22,7 @@ export default new Vuex.Store({
     // company actions
     async getCompany(context, payload) {
       try {
-        let response = await axios.get("/api/company/" + payload._id);
+        let response = await axios.get("/api/company/" + payload.id);
         context.commit("setCompany", response.data);
       } catch (error) {
         console.log(error);
@@ -35,6 +35,11 @@ export default new Vuex.Store({
       } catch (error) {
         console.log(error);
       }
+    }
+  },
+  getters: {
+    company: (state) => (id) => {
+      return state.companies.filter( c => c.id === Number(id))[0];
     }
   },
   modules: {

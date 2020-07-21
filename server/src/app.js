@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 const mongoose = require('mongoose');
-const uri = 'mongodb+srv://uriyahann:@cluster0.xvpyf.mongodb.net/pwyw-web-db?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://uriyahann:Evergreen@cluster0.xvpyf.mongodb.net/pwyw-web-db?retryWrites=true&w=majority';
 mongoose.connect(uri, {
   useNewUrlParser: true ,
   useUnifiedTopology: true

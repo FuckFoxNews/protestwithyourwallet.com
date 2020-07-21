@@ -6,6 +6,7 @@ import CompanyList from '../views/CompanyList.vue'
 import About from '../views/About.vue'
 import ContactUs from '../views/ContactUs.vue'
 import StayInformed from '../views/StayInformed.vue'
+import Company from '../views/Company.vue'
 
 Vue.use(VueRouter)
 
@@ -40,6 +41,11 @@ Vue.use(VueRouter)
     name: 'Stay Informed',
     component: StayInformed
   },
+  {
+    path: '/company/:id',
+    name: 'Company',
+    component: Company
+  }
 ]
 
 const router = new VueRouter({
